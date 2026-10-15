@@ -15,6 +15,3 @@ _data/raw/*
 _pipelines/**/outputs/**/final/
 _pipelines/**/outputs/**/report/
 _pipelines/**/outputs/**/screen/
-
-# Independently versioned public code repository (recorded in _release/README.md).
-/_release/BondFusion-TCN/

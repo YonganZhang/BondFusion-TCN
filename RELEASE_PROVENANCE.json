@@ -7,7 +7,8 @@
     "Pipeline CLI default changed from v02 protocol.yaml to protocol_v03.yaml.",
     "Legacy DA-only final-run CLI options removed.",
     "Package and vendor documentation cleaned of private machine paths.",
-    "Table column wording Blind changed to Held-out; numerical values unchanged."
+    "Table column wording Blind changed to Held-out; numerical values unchanged.",
+    "Removed one upstream trailing-whitespace occurrence; no runtime change."
   ],
   "files": [
     {
@@ -228,8 +229,8 @@
     },
     {
       "path": "_code/da_reformer/vendor/tslib/models/PatchTST.py",
-      "bytes": 807,
-      "sha256": "60fc3e30034dc25ba82724220569a3038fcd57def7f4f1908efa223105ebe61b",
+      "bytes": 806,
+      "sha256": "513e0b3871fb7857848205039cbdd4c979afbaf52725895d3f1c48d6853d770c",
       "source_path": "_code/da_reformer/vendor/tslib/models/PatchTST.py",
       "source_sha256": "60fc3e30034dc25ba82724220569a3038fcd57def7f4f1908efa223105ebe61b",
       "release_copy_modified": false
