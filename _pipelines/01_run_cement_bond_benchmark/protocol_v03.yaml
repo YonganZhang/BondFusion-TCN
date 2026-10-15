@@ -1,0 +1,98 @@
+# Protocol v03 (2026-10-10): VDL waveform as a second input modality; proposed model VDL-ModernTCN.
+#
+# Screen outcome (outputs/v03/screen/screen_summary.csv; CV macro-F1, mean ± std over 3 seeds,
+# pooled noise std 0.0155):
+#   a. VDL adopted: "ModernTCN +VDL" 0.862 ± 0.003 vs "ModernTCN" 0.683 ± 0.025.
+#   b. best variant "VDL-ModernTCN" (curve attention) 0.868 ± 0.006; "(mean pool)" 0.859 ± 0.028 is
+#      within 1 noise std and simpler -> proposed = "VDL-ModernTCN (mean pool)". Static query 0.856,
+#      + Reformer 0.861: no gain from window selection or from the LSH-attention hybrid.
+#   c. mean pool vs "+VDL" blocks: -0.003 -> the waveform encoder is kept (not worse).
+#   d. log-CBL: 0.721 vs 0.683 (+0.038 > 2 noise std) -> adopted for every model; round 2 shows it
+#      is neutral with VDL inputs (0.864 vs 0.862; 0.861 vs 0.859). Hence the curves-only
+#      baselines are re-tuned under v03 instead of reusing v02.
+#
+# Order of work, each step committed before the next:
+#   1. `screen` (step_09): fixed hyper-parameters, A-D leave-one-well-out CV only, 3 seeds.
+#      The decision rule below picks the proposed variant; no E/F data is read.
+#   2. `hpo` (step_04): 30 Optuna trials on A-D CV for the proposed model and for every
+#      baseline, curves-only and "+VDL" (equal budget).
+#   3. freeze `models` (commit), then step_05 final runs: 10 seeds, E/F scored once.
+#
+# Disclosure for the paper: E/F were already the blind wells of the v01/v02 benchmark
+# (curves-only baselines, DA-Reformer) and of the point-wise reference baselines (incl. a quick
+# VDL check); choosing ModernTCN as the backbone was informed by that benchmark. The VDL
+# log-envelope block design and the class-wise VDL inspection used A-D labels only.
+version: v03
+raw_dir: _data/raw
+train_wells: [A, B, C, D]
+test_wells: [E, F]
+
+features: [GR, CBL, CCL]
+missing_indicators: []
+transforms: {CCL: signed_log1p, CBL: signed_log1p}   # log-CBL: screen rule d (attenuation is logarithmic in amplitude)
+clip: 8.0
+gap_m: 0.5
+class_weight_power: 0.5
+
+vdl:
+  n_keep: 1900   # samples 1978-1999 hold the int16 floor -32768 (record trailer) in 89-100% of rows
+  bin: 10        # 190 log-envelope bins per depth -> waveform encoder (VDL-ModernTCN)
+  block: 100     # 19 log-envelope blocks per depth -> extra channels ("+VDL" baselines)
+
+train:
+  batch_size: 32
+  max_epochs: 150
+  patience: 25
+  warmup_epochs: 5
+  grad_clip: 1.0
+  seq_len: 256
+  train_stride: 64
+  infer_stride: 128
+  critic_lr: 2.0e-4
+  dom_ramp_epochs: 20
+  deterministic: true
+
+hpo:
+  n_trials: 30
+  sampler_seed: 2026
+  pruner_startup: 8
+  cv_seed: 0
+
+final:
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Design screen. Every candidate uses the tuned v02 ModernTCN hyper-parameters (backbone, lr,
+# weight decay, dropout) and the default waveform-encoder size; only the component changes.
+# Score = mean over seeds of the fold-mean CV macro-F1; noise = std over seeds.
+# Decision rule (fixed before the screen is run):
+#   a. VDL is adopted if "ModernTCN +VDL" beats "ModernTCN" by more than 2 noise std.
+#   b. Among the VDL-ModernTCN variants, take the best score; a simpler variant within 1 noise
+#      std of it is preferred (simplicity: mean pool < static query < curve attention < + Reformer).
+#   c. A waveform-encoder variant is proposed only if it is not worse than "ModernTCN +VDL" by
+#      more than 1 noise std; otherwise the paper's model is the plain "+VDL" input design.
+#   d. log-CBL is a diagnostic only: adopting it would change the curves-only protocol and
+#      require re-tuning every baseline, so it is adopted only if it gains > 2 noise std.
+screen:
+  seeds: [0, 1, 2]
+  hp_from: outputs/v02/hpo/ModernTCN.best.json
+  candidates:
+    - {id: S0, model: ModernTCN}
+    - {id: S0-logCBL, model: ModernTCN, transforms: {CCL: signed_log1p, CBL: signed_log1p}}
+    - {id: S1, model: "ModernTCN +VDL"}
+    - {id: S2, model: "VDL-ModernTCN (mean pool)"}
+    - {id: S3, model: "VDL-ModernTCN (static query)"}
+    - {id: S4, model: "VDL-ModernTCN"}
+    - {id: S5, model: "VDL-ModernTCN + Reformer"}
+    # round 2, added after round 1 (rule d fired for log-CBL): does log-CBL also hold with VDL inputs?
+    - {id: S1-logCBL, model: "ModernTCN +VDL", transforms: {CCL: signed_log1p, CBL: signed_log1p}}
+    - {id: S2-logCBL, model: "VDL-ModernTCN (mean pool)", transforms: {CCL: signed_log1p, CBL: signed_log1p}}
+
+# Frozen after the screen (this commit), before any v03 model is scored on E/F.
+models:
+  baselines: [LSTM, GRU, Transformer, Reformer, Crossformer, TimesNet, TimeMixer, ModernTCN]
+  vdl_baselines: ["LSTM +VDL", "GRU +VDL", "Transformer +VDL", "Reformer +VDL", "Crossformer +VDL",
+                  "TimesNet +VDL", "TimeMixer +VDL", "ModernTCN +VDL"]
+  proposed: "VDL-ModernTCN (mean pool)"
+  # ablations and screened variants reuse the tuned hyper-parameters of the proposed model
+  ablations: ["VDL-ModernTCN w/o waveform encoder", "VDL-ModernTCN w/o VDL"]
+  plugins: ["VDL-ModernTCN", "VDL-ModernTCN (static query)", "VDL-ModernTCN + Reformer"]

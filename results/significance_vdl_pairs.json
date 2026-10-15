@@ -1,0 +1,146 @@
+{
+  "LSTM +VDL vs LSTM": {
+    "model": "LSTM +VDL",
+    "other": "LSTM",
+    "ensemble_macro_f1_diff": 0.08299646213996181,
+    "boot_macro_f1_diff_ci95": [
+      -0.050486647453261695,
+      0.15635004830726532
+    ],
+    "boot_macro_f1_p_le_0": 0.277,
+    "ensemble_kappa_diff": 0.03281892173469525,
+    "boot_kappa_diff_ci95": [
+      -0.11253974073510126,
+      0.15767115533123627
+    ],
+    "boot_kappa_p_le_0": 0.323,
+    "seed_mean_macro_f1_diff": 0.0975590419392649,
+    "seed_mean_kappa_diff": 0.03637432940860297
+  },
+  "GRU +VDL vs GRU": {
+    "model": "GRU +VDL",
+    "other": "GRU",
+    "ensemble_macro_f1_diff": -0.007404473016627389,
+    "boot_macro_f1_diff_ci95": [
+      -0.06592537482654733,
+      0.07588218699772617
+    ],
+    "boot_macro_f1_p_le_0": 0.449,
+    "ensemble_kappa_diff": 0.11021248766253389,
+    "boot_kappa_diff_ci95": [
+      0.04174692474989361,
+      0.23200263440954413
+    ],
+    "boot_kappa_p_le_0": 0.0,
+    "seed_mean_macro_f1_diff": -0.008379432929180086,
+    "seed_mean_kappa_diff": 0.09521067899737967
+  },
+  "Transformer +VDL vs Transformer": {
+    "model": "Transformer +VDL",
+    "other": "Transformer",
+    "ensemble_macro_f1_diff": -0.06587948868482219,
+    "boot_macro_f1_diff_ci95": [
+      -0.189797713596796,
+      0.06920306163815651
+    ],
+    "boot_macro_f1_p_le_0": 0.696,
+    "ensemble_kappa_diff": 0.049265558097391526,
+    "boot_kappa_diff_ci95": [
+      -0.08113953742727867,
+      0.1996960584547297
+    ],
+    "boot_kappa_p_le_0": 0.2,
+    "seed_mean_macro_f1_diff": -0.04042029223399923,
+    "seed_mean_kappa_diff": 0.0533479821274534
+  },
+  "Reformer +VDL vs Reformer": {
+    "model": "Reformer +VDL",
+    "other": "Reformer",
+    "ensemble_macro_f1_diff": -0.00880787131559102,
+    "boot_macro_f1_diff_ci95": [
+      -0.13570485252439346,
+      0.3194031909386836
+    ],
+    "boot_macro_f1_p_le_0": 0.472,
+    "ensemble_kappa_diff": 0.10147733722362418,
+    "boot_kappa_diff_ci95": [
+      0.03288333614515646,
+      0.2267288791304937
+    ],
+    "boot_kappa_p_le_0": 0.0,
+    "seed_mean_macro_f1_diff": 0.0031309500064293783,
+    "seed_mean_kappa_diff": 0.07516043232425207
+  },
+  "Crossformer +VDL vs Crossformer": {
+    "model": "Crossformer +VDL",
+    "other": "Crossformer",
+    "ensemble_macro_f1_diff": -0.08512954635108172,
+    "boot_macro_f1_diff_ci95": [
+      -0.20826649690727272,
+      0.043095074147471546
+    ],
+    "boot_macro_f1_p_le_0": 0.835,
+    "ensemble_kappa_diff": 0.03556650575179465,
+    "boot_kappa_diff_ci95": [
+      -0.10293307337502393,
+      0.1836966785503131
+    ],
+    "boot_kappa_p_le_0": 0.275,
+    "seed_mean_macro_f1_diff": -0.0603036979158903,
+    "seed_mean_kappa_diff": 0.04246053730154953
+  },
+  "TimesNet +VDL vs TimesNet": {
+    "model": "TimesNet +VDL",
+    "other": "TimesNet",
+    "ensemble_macro_f1_diff": 0.00897739134892761,
+    "boot_macro_f1_diff_ci95": [
+      -0.0686005432653646,
+      0.07918584912461363
+    ],
+    "boot_macro_f1_p_le_0": 0.378,
+    "ensemble_kappa_diff": 0.030088967133226174,
+    "boot_kappa_diff_ci95": [
+      0.0023224158084530658,
+      0.08298503039024459
+    ],
+    "boot_kappa_p_le_0": 0.013,
+    "seed_mean_macro_f1_diff": 0.0051439231153150855,
+    "seed_mean_kappa_diff": -0.01976215826472638
+  },
+  "TimeMixer +VDL vs TimeMixer": {
+    "model": "TimeMixer +VDL",
+    "other": "TimeMixer",
+    "ensemble_macro_f1_diff": -0.13248177822062834,
+    "boot_macro_f1_diff_ci95": [
+      -0.2101233547855816,
+      0.04690183936760817
+    ],
+    "boot_macro_f1_p_le_0": 0.665,
+    "ensemble_kappa_diff": 0.05004210012774257,
+    "boot_kappa_diff_ci95": [
+      -0.011445629749357374,
+      0.1593726106640829
+    ],
+    "boot_kappa_p_le_0": 0.058,
+    "seed_mean_macro_f1_diff": -0.11093419382252256,
+    "seed_mean_kappa_diff": 0.01960386455066876
+  },
+  "ModernTCN +VDL vs ModernTCN": {
+    "model": "ModernTCN +VDL",
+    "other": "ModernTCN",
+    "ensemble_macro_f1_diff": -0.03758735703150562,
+    "boot_macro_f1_diff_ci95": [
+      -0.11264560956796173,
+      0.04228928506602448
+    ],
+    "boot_macro_f1_p_le_0": 0.74,
+    "ensemble_kappa_diff": 0.086114950316598,
+    "boot_kappa_diff_ci95": [
+      0.03985334449997917,
+      0.18429008534303842
+    ],
+    "boot_kappa_p_le_0": 0.0,
+    "seed_mean_macro_f1_diff": 0.005027095857307207,
+    "seed_mean_kappa_diff": 0.06605680273605807
+  }
+}

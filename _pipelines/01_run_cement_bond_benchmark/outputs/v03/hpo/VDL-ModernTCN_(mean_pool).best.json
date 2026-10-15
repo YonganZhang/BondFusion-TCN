@@ -1,0 +1,59 @@
+{
+  "model": "VDL-ModernTCN (mean pool)",
+  "value": 0.9183239303021536,
+  "trial": 5,
+  "hp": {
+    "lr": 0.0003192254425731603,
+    "weight_decay": 0.00013682265154686067,
+    "dropout": 0.11065643514263183,
+    "d_lift": 8,
+    "patch_size": 4,
+    "d_model": 32,
+    "ffn_ratio": 2,
+    "num_blocks": 2,
+    "large_size": 31,
+    "small_size": 5,
+    "d_wave": 64,
+    "wave_channels": 64
+  },
+  "stop_epoch": 52,
+  "folds": [
+    {
+      "val_well": "A",
+      "best_epoch": 67,
+      "macro_f1": 0.953750330318213,
+      "seconds": 29.43424415588379,
+      "f1_Poor": 0.9944190766108574,
+      "f1_Moderate": 0.9773053720195346,
+      "f1_Good": 0.8895265423242468
+    },
+    {
+      "val_well": "B",
+      "best_epoch": 36,
+      "macro_f1": 0.9875137118599956,
+      "seconds": 21.573036909103394,
+      "f1_Poor": 0.9989528795811519,
+      "f1_Moderate": 0.9990492489066363,
+      "f1_Good": 0.9645390070921985
+    },
+    {
+      "val_well": "C",
+      "best_epoch": 18,
+      "macro_f1": 0.7945019335426687,
+      "seconds": 17.243069887161255,
+      "f1_Poor": 0.93900563813429,
+      "f1_Moderate": 0.9504223283143591,
+      "f1_Good": 0.494077834179357
+    },
+    {
+      "val_well": "D",
+      "best_epoch": 73,
+      "macro_f1": 0.9375297454877374,
+      "seconds": 29.409990549087524,
+      "f1_Poor": 0.9990474376071633,
+      "f1_Moderate": 0.95457373988799,
+      "f1_Good": 0.858968058968059
+    }
+  ],
+  "n_trials": 31
+}

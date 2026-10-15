@@ -1,0 +1,11 @@
+# Reference direct dependency versions verified for this release.
+# Install a suitable CPU/CUDA PyTorch build for your machine.
+torch==2.11.0
+numpy==2.4.6
+pandas==3.0.6
+scipy==1.17.1
+scikit-learn==1.9.1
+PyYAML==6.0.3
+optuna==5.0.0
+einops==0.8.2
+reformer-pytorch==1.4.4

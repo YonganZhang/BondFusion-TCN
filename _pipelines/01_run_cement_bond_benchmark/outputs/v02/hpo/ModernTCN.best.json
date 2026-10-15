@@ -1,0 +1,45 @@
+{
+  "model": "ModernTCN",
+  "value": 0.742024014218004,
+  "trial": 25,
+  "hp": {
+    "lr": 0.0022919259537155416,
+    "weight_decay": 0.00038212180707057326,
+    "dropout": 0.29704193544821056,
+    "d_lift": 8,
+    "patch_size": 16,
+    "d_model": 64,
+    "ffn_ratio": 1,
+    "num_blocks": 2,
+    "large_size": 51,
+    "small_size": 5
+  },
+  "stop_epoch": 32,
+  "folds": [
+    {
+      "val_well": "A",
+      "best_epoch": 25,
+      "macro_f1": 0.8112250402608477,
+      "seconds": 4.170819520950317
+    },
+    {
+      "val_well": "B",
+      "best_epoch": 64,
+      "macro_f1": 0.8585390703257869,
+      "seconds": 8.368674516677856
+    },
+    {
+      "val_well": "C",
+      "best_epoch": 37,
+      "macro_f1": 0.7018461027233158,
+      "seconds": 5.583569288253784
+    },
+    {
+      "val_well": "D",
+      "best_epoch": 7,
+      "macro_f1": 0.5964858435620654,
+      "seconds": 2.6693994998931885
+    }
+  ],
+  "n_trials": 30
+}
