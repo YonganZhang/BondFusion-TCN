@@ -8,13 +8,23 @@
     "Legacy DA-only final-run CLI options removed.",
     "Package and vendor documentation cleaned of private machine paths.",
     "Table column wording Blind changed to Held-out; numerical values unchanged.",
-    "Removed one upstream trailing-whitespace occurrence; no runtime change."
+    "Removed one upstream trailing-whitespace occurrence; no runtime change.",
+    "Added unchanged frozen paper_numbers.json and safe aggregate analysis inputs.",
+    "Published original numerical analysis without shared plot-style/font dependencies; statistical functions and interval selector unchanged.",
+    "Added explicit authorized data-root and output-root adapters plus public aggregate input fallbacks.",
+    "Adapted supplementary table column labels to the released Held-out wording.",
+    "Added optional HPO-noise CV replay from frozen top-five configs instead of a private SQLite study."
   ],
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 229,
-      "sha256": "1c14fcd24906ccea1040b8031ec438a00610dc301603748532b025c2ce5ad37e"
+      "bytes": 312,
+      "sha256": "b7b9dff50daa90583b595be2a66919b3d03af148429c6df6a17bd3e48af3db20"
+    },
+    {
+      "path": "ANALYSIS_VALIDATION.json",
+      "bytes": 1384,
+      "sha256": "fa2b834a2a0e37cc47fe2aa4ac9a47dfdb3d28787cf4ebf72f0553fbaf126b23"
     },
     {
       "path": "LICENSE",
@@ -33,8 +43,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7333,
-      "sha256": "3a573930da934e33d98ecd2d0eed4d29ec4075056304e7beb07332c0c30f522f"
+      "bytes": 10552,
+      "sha256": "44384b5cba64d1606b934691f4322a846ca04d981d1d55c2f6632aa66db8113d"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -43,8 +53,61 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 1680,
-      "sha256": "a95ac20ebba357335975fec92cc28eeb04bc444eef47b6c7b300657936963ffd"
+      "bytes": 3509,
+      "sha256": "7f652ed2cd87fb6bfdaa5fc4f95090e80b78269cccca23c404d3aef1806e8c7c"
+    },
+    {
+      "path": "_analysis/README.md",
+      "bytes": 655,
+      "sha256": "7efab0e8356feba9f3e83c955d873d1e1c641da0352dd4ed584b97b888ebe6c9"
+    },
+    {
+      "path": "_analysis/_intervals.py",
+      "bytes": 1761,
+      "sha256": "e664ffb144c9f9e89a1fbc7d179e8e75587bec0ffe812b314cc77e1289a0ac60",
+      "source_path": "_figures/fig_02_data_vdl.py",
+      "source_sha256": "0b2ad6659d8e147b92238dc18a577e2d87c177ead1a72223448e191ceb05355c",
+      "release_copy_modified": true
+    },
+    {
+      "path": "_analysis/_paper_data.py",
+      "bytes": 16422,
+      "sha256": "2a673783d527963c685175aea140b447df0d0d5d9faed7a44aa106a51cf8a168",
+      "source_path": "_figures/_paper_data.py",
+      "source_sha256": "dc99e6e9b028184e09f0cbaed09474d9e40cb3c92d7683fdced992488f5843fe",
+      "release_copy_modified": true
+    },
+    {
+      "path": "_analysis/_post_hoc.py",
+      "bytes": 21048,
+      "sha256": "0cc0aae332362c295ddffd6eadf97d7e1a6d788fc95a365f7589d70c70d32b5f",
+      "source_path": "_figures/_post_hoc.py",
+      "source_sha256": "0cc0aae332362c295ddffd6eadf97d7e1a6d788fc95a365f7589d70c70d32b5f",
+      "release_copy_modified": false
+    },
+    {
+      "path": "_analysis/build_paper_numbers.py",
+      "bytes": 34690,
+      "sha256": "c8bc66186196389acf090f1cbbd03b405f5a7d5f85149fe50444dbc0f85e9008",
+      "source_path": "_figures/build_paper_numbers.py",
+      "source_sha256": "43842595b665c1685f7b312d82584a6a1785dd21c3de78c1465918fbd47c0670",
+      "release_copy_modified": true
+    },
+    {
+      "path": "_analysis/build_supplement_tables.py",
+      "bytes": 15695,
+      "sha256": "c2e1ad40105b59f0201ad71f8cb3804edf948347a591afe687879bc9bbf649a3",
+      "source_path": "_figures/build_supplement_tables.py",
+      "source_sha256": "03c9f44809594dd178d9e4267932cd26f8328382bdeef74810e22937d0cf3908",
+      "release_copy_modified": true
+    },
+    {
+      "path": "_analysis/rerun_hpo_noise.py",
+      "bytes": 3909,
+      "sha256": "2874ee5bf24320fbe0de4eb9c4b35a6f77e9daebbd1651f194cb82bdae52f968",
+      "source_path": "_sandbox/2026-10-10-hpo-selection-noise/run.py",
+      "source_sha256": "c0993c27ce84bb3fce84b347777466a9e539d68d3a6cc0a0de4d0395dc7adf89",
+      "release_copy_modified": true
     },
     {
       "path": "_code/README.md",
@@ -233,7 +296,7 @@
       "sha256": "513e0b3871fb7857848205039cbdd4c979afbaf52725895d3f1c48d6853d770c",
       "source_path": "_code/da_reformer/vendor/tslib/models/PatchTST.py",
       "source_sha256": "60fc3e30034dc25ba82724220569a3038fcd57def7f4f1908efa223105ebe61b",
-      "release_copy_modified": false
+      "release_copy_modified": true
     },
     {
       "path": "_code/da_reformer/vendor/tslib/models/TimeMixer.py",
@@ -504,7 +567,7 @@
     {
       "path": "pyproject.toml",
       "bytes": 770,
-      "sha256": "bba6b2b37f9d581ca893264ef693de6b32baed66002f4ab69bd11c2bfe83a45f"
+      "sha256": "91239a94c2504e32522c3c0f317710d3903ab5bc8986bd47d803627682d7c0a0"
     },
     {
       "path": "requirements.txt",
@@ -513,8 +576,8 @@
     },
     {
       "path": "results/README.md",
-      "bytes": 1047,
-      "sha256": "a16312a771df220e3843f69b847c24f90371403f1c15c1a53b9f046cda040ad0"
+      "bytes": 1654,
+      "sha256": "8ee8d7e65d4daaf26d9d4d33e380cf3c07da3ecc9dac6cb1c92b7a4e52bbcea2"
     },
     {
       "path": "results/hpo_summary.csv",
@@ -522,6 +585,14 @@
       "sha256": "4fd063aa0f3d494a45501c9f8269ce4c3207746f4ebd7c21a117069995411cb7",
       "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/report/hpo_summary.csv",
       "source_sha256": "4fd063aa0f3d494a45501c9f8269ce4c3207746f4ebd7c21a117069995411cb7",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/paper_numbers.json",
+      "bytes": 131880,
+      "sha256": "f13778667a8506ed65dbe3620e33962eb79fc5a9b5bc2a9c55ea0678de350efd",
+      "source_path": "_outputs/p04_v03_paper/paper_numbers.json",
+      "source_sha256": "f13778667a8506ed65dbe3620e33962eb79fc5a9b5bc2a9c55ea0678de350efd",
       "release_copy_modified": false
     },
     {
@@ -557,6 +628,260 @@
       "release_copy_modified": false
     },
     {
+      "path": "results/support/README.md",
+      "bytes": 733,
+      "sha256": "02a07cb260b05db4887f664a6a2c14d05e4ff97e6e6ae964957e0d6cd2a2be8d"
+    },
+    {
+      "path": "results/support/hpo_noise_configs.json",
+      "bytes": 2000,
+      "sha256": "3fb0598ab4dffd0c077cef7e3c0b19f541ff2a4865d5a2c53344a7a2cac1479d",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/hpo/VDL-ModernTCN_(mean_pool).db",
+      "source_sha256": "5c13ad788a8a3a4399adea9b1c8d082c054a35716872ef624c029e8df68e3667",
+      "release_copy_modified": true,
+      "derivation": "Read-only SQLite export of top-five COMPLETE trial hp/settings; no study database distributed."
+    },
+    {
+      "path": "results/support/hpo_noise_runs.json",
+      "bytes": 15482,
+      "sha256": "a358a22661f56cf7da8fc3d4f8d90299fa6f072f8c1fc7515ecab84af0120c41",
+      "source_path": "_sandbox/2026-10-10-hpo-selection-noise/out/VDL-ModernTCN_(mean_pool).json",
+      "source_sha256": "a358a22661f56cf7da8fc3d4f8d90299fa6f072f8c1fc7515ecab84af0120c41",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/reference_baselines.json",
+      "bytes": 4142,
+      "sha256": "7998004ee1cb42beddabe78cbcbb9140ad37c3eb562ccb3266f2de359542f112",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/reference_baselines.json",
+      "source_sha256": "7998004ee1cb42beddabe78cbcbb9140ad37c3eb562ccb3266f2de359542f112",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S0-logCBL_seed0.json",
+      "bytes": 1475,
+      "sha256": "2c9a93e492d0b516743472aa4c95f8540e265b984c79a76029e8f38617307175",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S0-logCBL_seed0.json",
+      "source_sha256": "2c9a93e492d0b516743472aa4c95f8540e265b984c79a76029e8f38617307175",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S0-logCBL_seed1.json",
+      "bytes": 1459,
+      "sha256": "597961d73f00cb6c6ccd33c417acd0a7ea968c03d2721c1e7c92beabd8bdbca8",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S0-logCBL_seed1.json",
+      "source_sha256": "597961d73f00cb6c6ccd33c417acd0a7ea968c03d2721c1e7c92beabd8bdbca8",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S0-logCBL_seed2.json",
+      "bytes": 1471,
+      "sha256": "74436544c383736aa065665eb6a152662cd680c2ea80c08830eabcff3dc63206",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S0-logCBL_seed2.json",
+      "source_sha256": "74436544c383736aa065665eb6a152662cd680c2ea80c08830eabcff3dc63206",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S0_seed0.json",
+      "bytes": 1361,
+      "sha256": "9f61d53d038f1d06b996d93086af15f2faff3ff87211437e26d22109a9a5c5b5",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S0_seed0.json",
+      "source_sha256": "9f61d53d038f1d06b996d93086af15f2faff3ff87211437e26d22109a9a5c5b5",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S0_seed1.json",
+      "bytes": 1344,
+      "sha256": "e127355b4137fef700f1b512d4cd997b7a63eb3987955fb7db10c9edd2fcebab",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S0_seed1.json",
+      "source_sha256": "e127355b4137fef700f1b512d4cd997b7a63eb3987955fb7db10c9edd2fcebab",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S0_seed2.json",
+      "bytes": 1391,
+      "sha256": "05120397f5608189ccf6f578b56e290a79161f5f34a4e89473c170e7f0e7c2c7",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S0_seed2.json",
+      "source_sha256": "05120397f5608189ccf6f578b56e290a79161f5f34a4e89473c170e7f0e7c2c7",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S1-logCBL_seed0.json",
+      "bytes": 1464,
+      "sha256": "76678cfbf4fed70308407a5c4497e2aa10a5ce23ef132ea16ddb38cc84e57608",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S1-logCBL_seed0.json",
+      "source_sha256": "76678cfbf4fed70308407a5c4497e2aa10a5ce23ef132ea16ddb38cc84e57608",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S1-logCBL_seed1.json",
+      "bytes": 1464,
+      "sha256": "fafa39c246902b58577456ee5a7712b25731fe9ca67a78e37c228e90873fdb20",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S1-logCBL_seed1.json",
+      "source_sha256": "fafa39c246902b58577456ee5a7712b25731fe9ca67a78e37c228e90873fdb20",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S1-logCBL_seed2.json",
+      "bytes": 1462,
+      "sha256": "a0eadfa57b969301a39bd76014d7f96a19951a5c939d9c227afe50c947e49ca8",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S1-logCBL_seed2.json",
+      "source_sha256": "a0eadfa57b969301a39bd76014d7f96a19951a5c939d9c227afe50c947e49ca8",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S1_seed0.json",
+      "bytes": 1376,
+      "sha256": "aa7259486e1b45aa0c5b338ab6dad55316241f0ea90906e03f8982fb0e24add6",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S1_seed0.json",
+      "source_sha256": "aa7259486e1b45aa0c5b338ab6dad55316241f0ea90906e03f8982fb0e24add6",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S1_seed1.json",
+      "bytes": 1379,
+      "sha256": "c4ac38600f23c109f9f85ceab83372fb7179a1612687eed69eaa2f91c931996a",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S1_seed1.json",
+      "source_sha256": "c4ac38600f23c109f9f85ceab83372fb7179a1612687eed69eaa2f91c931996a",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S1_seed2.json",
+      "bytes": 1379,
+      "sha256": "a65ce21cdf3908ffb5a0623f4f5d75cd6105fde5158b283d4b281945f36d2f24",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S1_seed2.json",
+      "source_sha256": "a65ce21cdf3908ffb5a0623f4f5d75cd6105fde5158b283d4b281945f36d2f24",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S2-logCBL_seed0.json",
+      "bytes": 1471,
+      "sha256": "5aa08e969dc4e7a363c89cfab4e64578916385ce51cfaabe93295f1c38c55df8",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S2-logCBL_seed0.json",
+      "source_sha256": "5aa08e969dc4e7a363c89cfab4e64578916385ce51cfaabe93295f1c38c55df8",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S2-logCBL_seed1.json",
+      "bytes": 1471,
+      "sha256": "013edfc16522cd73f421f39a5f47ec595b0e60f8833e71e2b59586cc673c04fd",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S2-logCBL_seed1.json",
+      "source_sha256": "013edfc16522cd73f421f39a5f47ec595b0e60f8833e71e2b59586cc673c04fd",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S2-logCBL_seed2.json",
+      "bytes": 1487,
+      "sha256": "876fb47b71a0e2aee6277b8d7934fbd3cebd831b127d529dd90d914ce19ec530",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S2-logCBL_seed2.json",
+      "source_sha256": "876fb47b71a0e2aee6277b8d7934fbd3cebd831b127d529dd90d914ce19ec530",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S2_seed0.json",
+      "bytes": 1375,
+      "sha256": "63a8a04f8391a5e24113f59d78e3fe042d1ca828a10266b68e88df54c0c6d065",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S2_seed0.json",
+      "source_sha256": "63a8a04f8391a5e24113f59d78e3fe042d1ca828a10266b68e88df54c0c6d065",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S2_seed1.json",
+      "bytes": 1407,
+      "sha256": "b0aa714dea9205f4b61a389bba9d7efa238ba0bc165cb108146ea7d8b6bd4acd",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S2_seed1.json",
+      "source_sha256": "b0aa714dea9205f4b61a389bba9d7efa238ba0bc165cb108146ea7d8b6bd4acd",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S2_seed2.json",
+      "bytes": 1407,
+      "sha256": "99205bcec9a2d3f40946f98fd289c99f10b35284b844a33e889a8c6e7c3563ee",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S2_seed2.json",
+      "source_sha256": "99205bcec9a2d3f40946f98fd289c99f10b35284b844a33e889a8c6e7c3563ee",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S3_seed0.json",
+      "bytes": 1378,
+      "sha256": "a7c3f59e7ec380f4fac688aecb326cc5e7d1cfe16639a69f6d253d48862b4ed3",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S3_seed0.json",
+      "source_sha256": "a7c3f59e7ec380f4fac688aecb326cc5e7d1cfe16639a69f6d253d48862b4ed3",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S3_seed1.json",
+      "bytes": 1411,
+      "sha256": "c0d6e7b3c8f344bc5a1460b6bb945dcc47dc0cabfe06a57fee358a13220b921a",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S3_seed1.json",
+      "source_sha256": "c0d6e7b3c8f344bc5a1460b6bb945dcc47dc0cabfe06a57fee358a13220b921a",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S3_seed2.json",
+      "bytes": 1404,
+      "sha256": "710894fc6ed5a33ad330d460ca86cbd5b0896624e876d203afa965e7cc85e90b",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S3_seed2.json",
+      "source_sha256": "710894fc6ed5a33ad330d460ca86cbd5b0896624e876d203afa965e7cc85e90b",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S4_seed0.json",
+      "bytes": 1379,
+      "sha256": "95ac15b5bc34a546347f1015481bd924fd3d43a4011e0a5547cf8999e387317d",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S4_seed0.json",
+      "source_sha256": "95ac15b5bc34a546347f1015481bd924fd3d43a4011e0a5547cf8999e387317d",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S4_seed1.json",
+      "bytes": 1362,
+      "sha256": "797ad0b99c9be09e2ad3e1819713cbd4689662a6036dece9446182e27cfd66e5",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S4_seed1.json",
+      "source_sha256": "797ad0b99c9be09e2ad3e1819713cbd4689662a6036dece9446182e27cfd66e5",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S4_seed2.json",
+      "bytes": 1378,
+      "sha256": "ed31ae717100bd5e2667d782e49f686fbc7fef4fc6e11cf4b690b53ea922d52e",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S4_seed2.json",
+      "source_sha256": "ed31ae717100bd5e2667d782e49f686fbc7fef4fc6e11cf4b690b53ea922d52e",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S5_seed0.json",
+      "bytes": 1387,
+      "sha256": "f7609bdc71d46fb85e3cd51e5bdfac3674c46a23272435f54edf9e11d4c3ac77",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S5_seed0.json",
+      "source_sha256": "f7609bdc71d46fb85e3cd51e5bdfac3674c46a23272435f54edf9e11d4c3ac77",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S5_seed1.json",
+      "bytes": 1387,
+      "sha256": "174c361706bf6c62af317c7537ee0a8acdd5a5ae3a9795d6eca4947c6d59d1c5",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S5_seed1.json",
+      "source_sha256": "174c361706bf6c62af317c7537ee0a8acdd5a5ae3a9795d6eca4947c6d59d1c5",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/screen/S5_seed2.json",
+      "bytes": 1392,
+      "sha256": "bc5f664ae9240f52f1d4eec54e6016346fb215862e5799b1b8a8da9b65db627f",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/screen/S5_seed2.json",
+      "source_sha256": "bc5f664ae9240f52f1d4eec54e6016346fb215862e5799b1b8a8da9b65db627f",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/support/significance_vs_mean_pool.json",
+      "bytes": 12213,
+      "sha256": "a0979c88206fcd1ce30307ed36fbbae055eef15c4b16cf90176a1c0102971844",
+      "source_path": "_pipelines/01_run_cement_bond_benchmark/outputs/v03/report/significance_vs_VDL-ModernTCN_(mean_pool).json",
+      "source_sha256": "a0979c88206fcd1ce30307ed36fbbae055eef15c4b16cf90176a1c0102971844",
+      "release_copy_modified": false
+    },
+    {
       "path": "results/table_02_main.csv",
       "bytes": 2217,
       "sha256": "5dc223cbae1ab18e7ddeb333a32c5b44ad5ef7e57f95d7ec1909b7866e6d923a",
@@ -581,6 +906,30 @@
       "release_copy_modified": true
     },
     {
+      "path": "results/table_S1_hyperparameters.csv",
+      "bytes": 2937,
+      "sha256": "c7c0d3fc23c8d7387b1bf7bc31849ce40750e5d0c0a90e5d6dbf87b6f23c2ba7",
+      "source_path": "_outputs/p04_v03_paper/table_S1_hyperparameters.csv",
+      "source_sha256": "c7c0d3fc23c8d7387b1bf7bc31849ce40750e5d0c0a90e5d6dbf87b6f23c2ba7",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/table_S1_search_space.md",
+      "bytes": 3596,
+      "sha256": "51ee0d7d720d3b9ba41a73cccabbfbd0050c492f0e8089223b6dfeba5863f46b",
+      "source_path": "_outputs/p04_v03_paper/table_S1_search_space.md",
+      "source_sha256": "51ee0d7d720d3b9ba41a73cccabbfbd0050c492f0e8089223b6dfeba5863f46b",
+      "release_copy_modified": false
+    },
+    {
+      "path": "results/table_S2_per_well.csv",
+      "bytes": 23907,
+      "sha256": "55e19616f15fbe0df8d08f32c751afd7a2be37514b09a7ceba65f43fa4ba4d7e",
+      "source_path": "_outputs/p04_v03_paper/table_S2_per_well.csv",
+      "source_sha256": "55e19616f15fbe0df8d08f32c751afd7a2be37514b09a7ceba65f43fa4ba4d7e",
+      "release_copy_modified": false
+    },
+    {
       "path": "results/table_S3_significance.csv",
       "bytes": 8256,
       "sha256": "b54361cb2e8348cf02719163a736d6ccd2262440c6d92cd49857379424ee4116",
@@ -599,9 +948,21 @@
       "sha256": "8c1058adfcd84c51a15ed66c859031c5e05adfbe7dee907583419025fdbb1838"
     },
     {
+      "path": "scripts/rebuild_paper_analysis.py",
+      "bytes": 3454,
+      "sha256": "327b1d1791f29a03ef80de99956e30e83dca005ec3b3e2029bc71c291d1c2855"
+    },
+    {
       "path": "scripts/smoke_test.py",
       "bytes": 3920,
       "sha256": "73d02010a31aff479c71130f06767e6f1100307e1bdbe63e8de5de42945d0055"
     }
-  ]
+  ],
+  "analysis_supplement_source_commit": "5da61f7619431715ab268ed9397add5fab6db3dc",
+  "release_version": "0.1.1",
+  "analysis_source_worktree_modified_paths": [
+    "_figures/_paper_data.py",
+    "_figures/build_supplement_tables.py"
+  ],
+  "analysis_source_identity_note": "Supplement source_commit is the project base; exact source_sha256 values identify copied workspace sources, including any listed uncommitted edits."
 }

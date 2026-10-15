@@ -17,3 +17,12 @@ Only table column wording `Blind` was changed to `Held-out` in the release;
 numerical values are unchanged. E/F were used in earlier benchmark versions.
 Raw inputs, per-depth predictions and study databases are not included.
 Recomputation requires authorized data and the complete relevant final runs.
+
+`paper_numbers.json` is the complete frozen anonymized numerical artifact,
+including all post hoc analyses and interval-level summaries; it is unchanged
+from the original source file. The additional `table_S1_hyperparameters.csv`,
+`table_S1_search_space.md`, and `table_S2_per_well.csv` support table recreation.
+`support/` contains only model settings and aggregate CV/reference/significance
+records. These files are results, not a public dataset. Use the root README's
+analysis commands to distinguish formatting aggregates from recomputing them
+with authorized raw data and frozen per-seed predictions.

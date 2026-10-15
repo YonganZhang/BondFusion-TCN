@@ -15,3 +15,8 @@ _data/raw/*
 _pipelines/**/outputs/**/final/
 _pipelines/**/outputs/**/report/
 _pipelines/**/outputs/**/screen/
+
+# Local analysis caches and recomputed outputs
+_tmp/
+_outputs/
+.analysis-check-*/

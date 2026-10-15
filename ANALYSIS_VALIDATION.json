@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-16",
+  "command": "python scripts/rebuild_paper_analysis.py numbers --data-root AUTHORIZED_INPUT_ROOT --output TEMPORARY_OUTPUT",
+  "cpu_threads_max": 8,
+  "training_performed": false,
+  "frozen_sha256": "f13778667a8506ed65dbe3620e33962eb79fc5a9b5bc2a9c55ea0678de350efd",
+  "recomputed_sha256": "de968e91fc5c5d06d383578c1b99f26a1c10481e1fd5a9cab95c79cea84e7c30",
+  "source_checks": {
+    "n_checks": 2023,
+    "n_failed": 0,
+    "tolerance": 1e-06,
+    "max_abs_diff": 2.220446049250313e-16,
+    "failed": []
+  },
+  "compared_fields": {
+    "numeric": 3773,
+    "other": 301
+  },
+  "max_absolute_numeric_difference": 0.0,
+  "mismatches": [],
+  "metadata_differences": [
+    {
+      "path": "/_about/description",
+      "reason": "metadata differs"
+    },
+    {
+      "path": "/designs/rows/ModernTCN +VDL",
+      "reason": "current model display-name adoption",
+      "frozen": "ModernTCN, Curves + VDL",
+      "recomputed": "BondFusion-TCN"
+    }
+  ],
+  "status": "passed",
+  "elapsed_seconds": 75.37,
+  "comparison_policy": "All numeric fields and statistical content must match; documented module-source and model-display strings may differ.",
+  "source_preservation": {
+    "post_hoc_source_byte_identical": true,
+    "frozen_numbers_byte_identical": true,
+    "interval_selector_function_ast_identical": true
+  },
+  "post_hoc_numeric_fields_compared": 592
+}

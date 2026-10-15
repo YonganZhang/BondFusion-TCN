@@ -1,0 +1,61 @@
+{
+  "id": "S2-logCBL",
+  "model": "VDL-ModernTCN (mean pool)",
+  "transforms": {
+    "CCL": "signed_log1p",
+    "CBL": "signed_log1p"
+  },
+  "seed": 2,
+  "hp": {
+    "lr": 0.0022919259537155416,
+    "weight_decay": 0.00038212180707057326,
+    "dropout": 0.29704193544821056,
+    "d_lift": 8,
+    "patch_size": 16,
+    "d_model": 64,
+    "ffn_ratio": 1,
+    "num_blocks": 2,
+    "large_size": 51,
+    "small_size": 5
+  },
+  "mean_macro_f1": 0.8527610318099662,
+  "stop_epoch": 16,
+  "folds": [
+    {
+      "val_well": "A",
+      "best_epoch": 12,
+      "macro_f1": 0.8389461169177341,
+      "seconds": 6.393414735794067,
+      "f1_Poor": 0.9775885814448478,
+      "f1_Moderate": 0.889589905362776,
+      "f1_Good": 0.6496598639455783
+    },
+    {
+      "val_well": "B",
+      "best_epoch": 67,
+      "macro_f1": 0.9509409242946072,
+      "seconds": 16.858702898025513,
+      "f1_Poor": 0.9955392285489373,
+      "f1_Moderate": 0.9927674153026266,
+      "f1_Good": 0.864516129032258
+    },
+    {
+      "val_well": "C",
+      "best_epoch": 10,
+      "macro_f1": 0.7382177068459277,
+      "seconds": 6.524970293045044,
+      "f1_Poor": 0.9931906614785992,
+      "f1_Moderate": 0.861424758776432,
+      "f1_Good": 0.3600377002827521
+    },
+    {
+      "val_well": "D",
+      "best_epoch": 18,
+      "macro_f1": 0.8829393791815958,
+      "seconds": 6.668447494506836,
+      "f1_Poor": 0.9825851393188855,
+      "f1_Moderate": 0.9201655824955648,
+      "f1_Good": 0.7460674157303371
+    }
+  ]
+}

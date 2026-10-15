@@ -1,0 +1,380 @@
+{
+  "VDL-ModernTCN (mean pool) vs VDL-ModernTCN w/o waveform encoder": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "VDL-ModernTCN w/o waveform encoder",
+    "ensemble_macro_f1_diff": 0.06968538392919155,
+    "boot_macro_f1_diff_ci95": [
+      -0.03530443128758501,
+      0.21384503398965174
+    ],
+    "boot_macro_f1_p_le_0": 0.17,
+    "ensemble_kappa_diff": -0.03706895492927975,
+    "boot_kappa_diff_ci95": [
+      -0.13625576190411676,
+      0.033010443484357214
+    ],
+    "boot_kappa_p_le_0": 0.764,
+    "seed_mean_macro_f1_diff": 0.01395857062280148,
+    "seed_mean_kappa_diff": -0.01583265893857
+  },
+  "VDL-ModernTCN (mean pool) vs VDL-ModernTCN w/o VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "VDL-ModernTCN w/o VDL",
+    "ensemble_macro_f1_diff": 0.003229150884540233,
+    "boot_macro_f1_diff_ci95": [
+      -0.06324068058142734,
+      0.1635500900862104
+    ],
+    "boot_macro_f1_p_le_0": 0.33,
+    "ensemble_kappa_diff": 0.049468373174439306,
+    "boot_kappa_diff_ci95": [
+      -0.04209271865269925,
+      0.15777077990231342
+    ],
+    "boot_kappa_p_le_0": 0.124,
+    "seed_mean_macro_f1_diff": -0.01116761532277255,
+    "seed_mean_kappa_diff": 0.03734849844484167
+  },
+  "VDL-ModernTCN (mean pool) vs VDL-ModernTCN": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "VDL-ModernTCN",
+    "ensemble_macro_f1_diff": -0.02278544896013146,
+    "boot_macro_f1_diff_ci95": [
+      -0.06706406828296792,
+      0.1678423096143634
+    ],
+    "boot_macro_f1_p_le_0": 0.565,
+    "ensemble_kappa_diff": -0.015482889647013498,
+    "boot_kappa_diff_ci95": [
+      -0.09206088106766455,
+      0.0538304937661301
+    ],
+    "boot_kappa_p_le_0": 0.595,
+    "seed_mean_macro_f1_diff": -0.03279059935431694,
+    "seed_mean_kappa_diff": -0.025861887404191375
+  },
+  "VDL-ModernTCN (mean pool) vs VDL-ModernTCN (static query)": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "VDL-ModernTCN (static query)",
+    "ensemble_macro_f1_diff": 0.044561126559751085,
+    "boot_macro_f1_diff_ci95": [
+      -0.01245715193408711,
+      0.10640035758256895
+    ],
+    "boot_macro_f1_p_le_0": 0.086,
+    "ensemble_kappa_diff": 0.012883925890027847,
+    "boot_kappa_diff_ci95": [
+      9.591439149446161e-05,
+      0.034576231715851176
+    ],
+    "boot_kappa_p_le_0": 0.02,
+    "seed_mean_macro_f1_diff": 0.0033689133343957067,
+    "seed_mean_kappa_diff": -0.0027307182443796485
+  },
+  "VDL-ModernTCN (mean pool) vs VDL-ModernTCN + Reformer": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "VDL-ModernTCN + Reformer",
+    "ensemble_macro_f1_diff": 0.001678861013517996,
+    "boot_macro_f1_diff_ci95": [
+      -0.0415243013567813,
+      0.10788367272725534
+    ],
+    "boot_macro_f1_p_le_0": 0.385,
+    "ensemble_kappa_diff": -0.023098167637625067,
+    "boot_kappa_diff_ci95": [
+      -0.10249134965170871,
+      0.03586492097052978
+    ],
+    "boot_kappa_p_le_0": 0.649,
+    "seed_mean_macro_f1_diff": -0.01507204671262441,
+    "seed_mean_kappa_diff": -0.010123707862850773
+  },
+  "VDL-ModernTCN (mean pool) vs LSTM +VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "LSTM +VDL",
+    "ensemble_macro_f1_diff": -0.043855207363427295,
+    "boot_macro_f1_diff_ci95": [
+      -0.13871086797036106,
+      0.24001533174987294
+    ],
+    "boot_macro_f1_p_le_0": 0.404,
+    "ensemble_kappa_diff": 0.027491724728151312,
+    "boot_kappa_diff_ci95": [
+      -0.07425633862321457,
+      0.16384207373286225
+    ],
+    "boot_kappa_p_le_0": 0.276,
+    "seed_mean_macro_f1_diff": -0.05289671310178801,
+    "seed_mean_kappa_diff": 0.027682829227377304
+  },
+  "VDL-ModernTCN (mean pool) vs GRU +VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "GRU +VDL",
+    "ensemble_macro_f1_diff": 0.09712192620459581,
+    "boot_macro_f1_diff_ci95": [
+      -0.02095170776984753,
+      0.24692146289336303
+    ],
+    "boot_macro_f1_p_le_0": 0.114,
+    "ensemble_kappa_diff": -0.01974814992699736,
+    "boot_kappa_diff_ci95": [
+      -0.10904406788693957,
+      0.05283198713320228
+    ],
+    "boot_kappa_p_le_0": 0.628,
+    "seed_mean_macro_f1_diff": 0.06957307793151024,
+    "seed_mean_kappa_diff": -0.02169565596828371
+  },
+  "VDL-ModernTCN (mean pool) vs Transformer +VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "Transformer +VDL",
+    "ensemble_macro_f1_diff": 0.11989950825614604,
+    "boot_macro_f1_diff_ci95": [
+      -0.00363011255655547,
+      0.2774367640113183
+    ],
+    "boot_macro_f1_p_le_0": 0.035,
+    "ensemble_kappa_diff": 0.04701252300713532,
+    "boot_kappa_diff_ci95": [
+      -0.05250685455505326,
+      0.18113297790357596
+    ],
+    "boot_kappa_p_le_0": 0.176,
+    "seed_mean_macro_f1_diff": 0.08344503683613036,
+    "seed_mean_kappa_diff": 0.0315308857476535
+  },
+  "VDL-ModernTCN (mean pool) vs Reformer +VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "Reformer +VDL",
+    "ensemble_macro_f1_diff": 0.048796557688814524,
+    "boot_macro_f1_diff_ci95": [
+      -0.13777832940569137,
+      0.1961388494932281
+    ],
+    "boot_macro_f1_p_le_0": 0.333,
+    "ensemble_kappa_diff": -0.023217701653920897,
+    "boot_kappa_diff_ci95": [
+      -0.11032653591943925,
+      0.044694239373913154
+    ],
+    "boot_kappa_p_le_0": 0.686,
+    "seed_mean_macro_f1_diff": 0.0366967909770084,
+    "seed_mean_kappa_diff": -0.010328072526424537
+  },
+  "VDL-ModernTCN (mean pool) vs Crossformer +VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "Crossformer +VDL",
+    "ensemble_macro_f1_diff": 0.12694423858802062,
+    "boot_macro_f1_diff_ci95": [
+      -0.0016150904090648924,
+      0.29442292233854994
+    ],
+    "boot_macro_f1_p_le_0": 0.028,
+    "ensemble_kappa_diff": 0.0670521819511376,
+    "boot_kappa_diff_ci95": [
+      -0.04430692954243582,
+      0.22474993152560632
+    ],
+    "boot_kappa_p_le_0": 0.124,
+    "seed_mean_macro_f1_diff": 0.09045959128608061,
+    "seed_mean_kappa_diff": 0.052562386080661216
+  },
+  "VDL-ModernTCN (mean pool) vs TimesNet +VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "TimesNet +VDL",
+    "ensemble_macro_f1_diff": 0.004681442876636965,
+    "boot_macro_f1_diff_ci95": [
+      -0.03953011797464705,
+      0.11695183084166288
+    ],
+    "boot_macro_f1_p_le_0": 0.46,
+    "ensemble_kappa_diff": -0.019989495065534824,
+    "boot_kappa_diff_ci95": [
+      -0.08486441776048063,
+      0.035766914438790286
+    ],
+    "boot_kappa_p_le_0": 0.714,
+    "seed_mean_macro_f1_diff": 0.012762391072234647,
+    "seed_mean_kappa_diff": 0.049540133812487785
+  },
+  "VDL-ModernTCN (mean pool) vs TimeMixer +VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "TimeMixer +VDL",
+    "ensemble_macro_f1_diff": 0.09460854472813385,
+    "boot_macro_f1_diff_ci95": [
+      -0.03252473216613193,
+      0.25121843119499326
+    ],
+    "boot_macro_f1_p_le_0": 0.132,
+    "ensemble_kappa_diff": -0.025570013921143775,
+    "boot_kappa_diff_ci95": [
+      -0.14283572182492144,
+      0.0651688806017961
+    ],
+    "boot_kappa_p_le_0": 0.635,
+    "seed_mean_macro_f1_diff": 0.07681945531899836,
+    "seed_mean_kappa_diff": 0.014990575764660341
+  },
+  "VDL-ModernTCN (mean pool) vs ModernTCN +VDL": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "ModernTCN +VDL",
+    "ensemble_macro_f1_diff": 0.04096892966701848,
+    "boot_macro_f1_diff_ci95": [
+      -0.04211732226652602,
+      0.20937585167801967
+    ],
+    "boot_macro_f1_p_le_0": 0.25,
+    "ensemble_kappa_diff": -0.03690744053668138,
+    "boot_kappa_diff_ci95": [
+      -0.13143009655126658,
+      0.030576405751122773
+    ],
+    "boot_kappa_p_le_0": 0.775,
+    "seed_mean_macro_f1_diff": -0.017721739169197837,
+    "seed_mean_kappa_diff": -0.02315886696078917
+  },
+  "VDL-ModernTCN (mean pool) vs LSTM": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "LSTM",
+    "ensemble_macro_f1_diff": 0.03914125477653452,
+    "boot_macro_f1_diff_ci95": [
+      -0.027007568590252374,
+      0.21929074791402234
+    ],
+    "boot_macro_f1_p_le_0": 0.129,
+    "ensemble_kappa_diff": 0.06031064646284656,
+    "boot_kappa_diff_ci95": [
+      -0.022555302089003335,
+      0.18182537388703618
+    ],
+    "boot_kappa_p_le_0": 0.081,
+    "seed_mean_macro_f1_diff": 0.044662328837476895,
+    "seed_mean_kappa_diff": 0.06405715863598027
+  },
+  "VDL-ModernTCN (mean pool) vs GRU": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "GRU",
+    "ensemble_macro_f1_diff": 0.08971745318796842,
+    "boot_macro_f1_diff_ci95": [
+      0.00034639900254434354,
+      0.2538008635885123
+    ],
+    "boot_macro_f1_p_le_0": 0.025,
+    "ensemble_kappa_diff": 0.09046433773553653,
+    "boot_kappa_diff_ci95": [
+      -0.017099435475660327,
+      0.23872621534715585
+    ],
+    "boot_kappa_p_le_0": 0.043,
+    "seed_mean_macro_f1_diff": 0.061193645002330155,
+    "seed_mean_kappa_diff": 0.07351502302909596
+  },
+  "VDL-ModernTCN (mean pool) vs Transformer": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "Transformer",
+    "ensemble_macro_f1_diff": 0.05402001957132385,
+    "boot_macro_f1_diff_ci95": [
+      -0.021456240836807104,
+      0.2548848558694944
+    ],
+    "boot_macro_f1_p_le_0": 0.08,
+    "ensemble_kappa_diff": 0.09627808110452685,
+    "boot_kappa_diff_ci95": [
+      0.010730585270899715,
+      0.23559864374175404
+    ],
+    "boot_kappa_p_le_0": 0.013,
+    "seed_mean_macro_f1_diff": 0.043024744602131126,
+    "seed_mean_kappa_diff": 0.0848788678751069
+  },
+  "VDL-ModernTCN (mean pool) vs Reformer": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "Reformer",
+    "ensemble_macro_f1_diff": 0.0399886863732235,
+    "boot_macro_f1_diff_ci95": [
+      -0.0375568733800976,
+      0.24512141081533473
+    ],
+    "boot_macro_f1_p_le_0": 0.134,
+    "ensemble_kappa_diff": 0.07825963556970328,
+    "boot_kappa_diff_ci95": [
+      -0.012749578108273249,
+      0.20984049617066344
+    ],
+    "boot_kappa_p_le_0": 0.048,
+    "seed_mean_macro_f1_diff": 0.039827740983437776,
+    "seed_mean_kappa_diff": 0.06483235979782753
+  },
+  "VDL-ModernTCN (mean pool) vs Crossformer": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "Crossformer",
+    "ensemble_macro_f1_diff": 0.0418146922369389,
+    "boot_macro_f1_diff_ci95": [
+      -0.029779994642881794,
+      0.204679637149529
+    ],
+    "boot_macro_f1_p_le_0": 0.111,
+    "ensemble_kappa_diff": 0.10261868770293225,
+    "boot_kappa_diff_ci95": [
+      0.0129679644775871,
+      0.2407266406674552
+    ],
+    "boot_kappa_p_le_0": 0.016,
+    "seed_mean_macro_f1_diff": 0.030155893370190312,
+    "seed_mean_kappa_diff": 0.09502292338221074
+  },
+  "VDL-ModernTCN (mean pool) vs TimesNet": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "TimesNet",
+    "ensemble_macro_f1_diff": 0.013658834225564576,
+    "boot_macro_f1_diff_ci95": [
+      -0.027063800392717635,
+      0.1353634785107259
+    ],
+    "boot_macro_f1_p_le_0": 0.286,
+    "ensemble_kappa_diff": 0.01009947206769135,
+    "boot_kappa_diff_ci95": [
+      -0.05304449655875704,
+      0.08905555903939208
+    ],
+    "boot_kappa_p_le_0": 0.345,
+    "seed_mean_macro_f1_diff": 0.017906314187549732,
+    "seed_mean_kappa_diff": 0.029777975547761404
+  },
+  "VDL-ModernTCN (mean pool) vs TimeMixer": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "TimeMixer",
+    "ensemble_macro_f1_diff": -0.037873233492494496,
+    "boot_macro_f1_diff_ci95": [
+      -0.15979329312598436,
+      0.23648664702113478
+    ],
+    "boot_macro_f1_p_le_0": 0.447,
+    "ensemble_kappa_diff": 0.024472086206598798,
+    "boot_kappa_diff_ci95": [
+      -0.13492865467833046,
+      0.1687416687231934
+    ],
+    "boot_kappa_p_le_0": 0.319,
+    "seed_mean_macro_f1_diff": -0.0341147385035242,
+    "seed_mean_kappa_diff": 0.0345944403153291
+  },
+  "VDL-ModernTCN (mean pool) vs ModernTCN": {
+    "model": "VDL-ModernTCN (mean pool)",
+    "other": "ModernTCN",
+    "ensemble_macro_f1_diff": 0.003381572635512864,
+    "boot_macro_f1_diff_ci95": [
+      -0.060686359053074186,
+      0.16311711018611463
+    ],
+    "boot_macro_f1_p_le_0": 0.312,
+    "ensemble_kappa_diff": 0.049207509779916614,
+    "boot_kappa_diff_ci95": [
+      -0.05818115171054683,
+      0.16405732603724596
+    ],
+    "boot_kappa_p_le_0": 0.147,
+    "seed_mean_macro_f1_diff": -0.01269464331189063,
+    "seed_mean_kappa_diff": 0.0428979357752689
+  }
+}

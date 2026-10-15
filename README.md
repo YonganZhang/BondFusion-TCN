@@ -108,6 +108,58 @@ study databases. Starting HPO in this release creates fresh studies; exact trial
 histories are not reconstructed from those JSON files. GPU arithmetic and
 library/backend changes can affect numerical reproducibility.
 
+## Numerical paper analysis
+
+The frozen `results/paper_numbers.json` provides the complete anonymized
+numerical record, including post hoc decision-rule diagnostics, error costs,
+Good-class/bootstrap coverage and direct encoder comparisons. It is copied
+unchanged from the frozen artifact. Wells are identified only as A–F. Small
+Good-zone and figure-interval summaries retain interval endpoints and counts;
+there are no per-depth logs, waveforms, labels or prediction arrays. These
+results are **aggregate evidence, not a release of the underlying dataset**.
+The file's historical `_figures/` source labels refer to the private study's
+original layout; equivalent public numerical modules are in `_analysis/`.
+
+The original analysis algorithms and interval-selection rule are preserved.
+Only local input/output resolution, aggregate fallbacks and plotting/font/shared
+skill dependencies were adapted. No figure assets or shared skill files are
+required. The existing runtime requirements cover this analysis; Matplotlib,
+PowerPoint and font installation are unnecessary for the numerical commands.
+
+```bash
+python scripts/rebuild_paper_analysis.py --help
+python scripts/rebuild_paper_analysis.py inspect
+python scripts/rebuild_paper_analysis.py tables --from-release --output _outputs/reformatted_tables
+python scripts/rebuild_paper_analysis.py numbers --data-root AUTHORIZED_INPUT_ROOT --output _outputs/recomputed_numbers
+python scripts/rebuild_paper_analysis.py post-hoc --data-root AUTHORIZED_INPUT_ROOT --output _outputs/recomputed_post_hoc
+```
+
+`inspect` imports the analysis and lists the released sections. `tables
+--from-release` formats the released aggregate CSV/JSON files into LaTeX table
+fragments; it does not independently validate the underlying measurements.
+`numbers` and `post-hoc` require the authorized raw six-well inputs and all
+required frozen per-seed metrics/probabilities under `AUTHORIZED_INPUT_ROOT`,
+with the same `_data/` and `_pipelines/` layout. For the complete number builder,
+this means all 22 registered architecture/input/design runs with 10 seeds each.
+Training is performed separately by the benchmark steps. The public analysis
+commands themselves do not train and write only aggregate reports/tables and
+ignored numerical caches. Recomputing the real paper numbers from released
+aggregates alone is not possible.
+
+`results/support/` supplies additional aggregate reference/significance,
+screen-fold and HPO-noise records. The HPO-noise top-five settings are included
+so their training-well CV reevaluation does not require the private study DB:
+
+```bash
+python _analysis/rerun_hpo_noise.py --help
+python _analysis/rerun_hpo_noise.py --model "VDL-ModernTCN (mean pool)" --data-root AUTHORIZED_INPUT_ROOT --device cuda
+```
+
+This last optional command **does train** on A–D cross-validation; E/F are not
+used. It is separate from the training-free paper analysis and has not been
+rerun for this release. No new experiment or original manuscript number is
+introduced by the analysis supplement.
+
 ## Repository contents
 
 - `_code/da_reformer/`: preprocessing, current sequence models, training,
@@ -117,7 +169,10 @@ library/backend changes can affect numerical reproducibility.
   frozen hyperparameters. Runtime outputs remain local.
 - `results/`: aggregate tables from real v03 runs, without sample-level logs
   or predictions. `results/README.md` describes the tables.
-- `scripts/`: a synthetic CPU smoke test and a publication-boundary audit.
+- `_analysis/`: training-free statistical analysis, table builders and interval
+  selection, plus a separate optional HPO-noise CV training entry.
+- `scripts/`: synthetic CPU verification, publication-boundary audit and the
+  paper-analysis entry point.
 - `RELEASE_PROVENANCE.json`: source commit and file hashes for this distribution.
 
 Raw logs, model weights, sample-level predictions, unpublished manuscripts,

@@ -1,0 +1,57 @@
+{
+  "id": "S3",
+  "model": "VDL-ModernTCN (static query)",
+  "seed": 0,
+  "hp": {
+    "lr": 0.0022919259537155416,
+    "weight_decay": 0.00038212180707057326,
+    "dropout": 0.29704193544821056,
+    "d_lift": 8,
+    "patch_size": 16,
+    "d_model": 64,
+    "ffn_ratio": 1,
+    "num_blocks": 2,
+    "large_size": 51,
+    "small_size": 5
+  },
+  "mean_macro_f1": 0.8594009964029097,
+  "stop_epoch": 39,
+  "folds": [
+    {
+      "val_well": "A",
+      "best_epoch": 37,
+      "macro_f1": 0.8327045548928235,
+      "seconds": 10.912795782089233,
+      "f1_Poor": 0.9937364182538668,
+      "f1_Moderate": 0.9305517430688992,
+      "f1_Good": 0.5738255033557047
+    },
+    {
+      "val_well": "B",
+      "best_epoch": 59,
+      "macro_f1": 0.9986435691740109,
+      "seconds": 15.331262111663818,
+      "f1_Poor": 0.997643362136685,
+      "f1_Moderate": 0.9982873453853472,
+      "f1_Good": 1.0
+    },
+    {
+      "val_well": "C",
+      "best_epoch": 11,
+      "macro_f1": 0.7230214504547745,
+      "seconds": 7.559454917907715,
+      "f1_Poor": 1.0,
+      "f1_Moderate": 0.8345991561181435,
+      "f1_Good": 0.33446519524617996
+    },
+    {
+      "val_well": "D",
+      "best_epoch": 40,
+      "macro_f1": 0.88323441109003,
+      "seconds": 10.13116717338562,
+      "f1_Poor": 0.9924012158054711,
+      "f1_Moderate": 0.9154320987654321,
+      "f1_Good": 0.741869918699187
+    }
+  ]
+}

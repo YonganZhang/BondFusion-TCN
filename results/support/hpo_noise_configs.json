@@ -1,0 +1,92 @@
+[
+  {
+    "trial": 5,
+    "hpo_value": 0.9183239303021536,
+    "hp": {
+      "lr": 0.0003192254425731603,
+      "weight_decay": 0.00013682265154686067,
+      "dropout": 0.11065643514263183,
+      "d_lift": 8,
+      "patch_size": 4,
+      "d_model": 32,
+      "ffn_ratio": 2,
+      "num_blocks": 2,
+      "large_size": 31,
+      "small_size": 5,
+      "d_wave": 64,
+      "wave_channels": 64
+    }
+  },
+  {
+    "trial": 26,
+    "hpo_value": 0.9126980270278878,
+    "hp": {
+      "lr": 0.0009220532728428571,
+      "weight_decay": 1.918199656898618e-06,
+      "dropout": 0.061760633297384834,
+      "d_lift": 8,
+      "patch_size": 4,
+      "d_model": 32,
+      "ffn_ratio": 2,
+      "num_blocks": 2,
+      "large_size": 31,
+      "small_size": 5,
+      "d_wave": 64,
+      "wave_channels": 32
+    }
+  },
+  {
+    "trial": 28,
+    "hpo_value": 0.9109760734846415,
+    "hp": {
+      "lr": 0.00170736403764318,
+      "weight_decay": 3.5119322695223794e-05,
+      "dropout": 0.12088372788448569,
+      "d_lift": 8,
+      "patch_size": 4,
+      "d_model": 32,
+      "ffn_ratio": 2,
+      "num_blocks": 2,
+      "large_size": 31,
+      "small_size": 5,
+      "d_wave": 64,
+      "wave_channels": 32
+    }
+  },
+  {
+    "trial": 27,
+    "hpo_value": 0.9074749569039627,
+    "hp": {
+      "lr": 0.0007199695916396289,
+      "weight_decay": 0.008728641481717345,
+      "dropout": 0.1964568673484101,
+      "d_lift": 8,
+      "patch_size": 4,
+      "d_model": 32,
+      "ffn_ratio": 2,
+      "num_blocks": 2,
+      "large_size": 31,
+      "small_size": 5,
+      "d_wave": 64,
+      "wave_channels": 64
+    }
+  },
+  {
+    "trial": 29,
+    "hpo_value": 0.9030559956278148,
+    "hp": {
+      "lr": 0.0019516419480025292,
+      "weight_decay": 1.662511013043184e-06,
+      "dropout": 0.1437353485251824,
+      "d_lift": 8,
+      "patch_size": 4,
+      "d_model": 32,
+      "ffn_ratio": 2,
+      "num_blocks": 2,
+      "large_size": 31,
+      "small_size": 5,
+      "d_wave": 64,
+      "wave_channels": 32
+    }
+  }
+]

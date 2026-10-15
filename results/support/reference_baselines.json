@@ -1,0 +1,186 @@
+{
+  "CBL two-threshold rule": {
+    "thresholds": [
+      4.838200000000004,
+      0.523
+    ],
+    "n": 33664,
+    "accuracy": 0.8701283269961977,
+    "macro_f1": 0.5449416570331306,
+    "kappa": 0.61503798970029,
+    "mcc": 0.631796043804463,
+    "confusion": [
+      [
+        26622,
+        748,
+        3
+      ],
+      [
+        53,
+        2416,
+        3456
+      ],
+      [
+        0,
+        112,
+        254
+      ]
+    ],
+    "precision_Poor": 0.9980131208997188,
+    "recall_Poor": 0.9725642056040624,
+    "f1_Poor": 0.9851243339253997,
+    "support_Poor": 27373,
+    "precision_Moderate": 0.7374847374847375,
+    "recall_Moderate": 0.4077637130801688,
+    "f1_Moderate": 0.525160308662102,
+    "support_Moderate": 5925,
+    "precision_Good": 0.06840829517910046,
+    "recall_Good": 0.6939890710382514,
+    "f1_Good": 0.12454032851189017,
+    "support_Good": 366
+  },
+  "HGB point-wise (GR,CBL,CCL)": {
+    "n": 33664,
+    "accuracy": 0.8820698669201521,
+    "macro_f1": 0.5674814133478482,
+    "kappa": 0.6487437228708166,
+    "mcc": 0.6618657068577334,
+    "confusion": [
+      [
+        26586,
+        754,
+        33
+      ],
+      [
+        53,
+        2885,
+        2987
+      ],
+      [
+        0,
+        143,
+        223
+      ]
+    ],
+    "precision_Poor": 0.9980104358271706,
+    "recall_Poor": 0.9712490410258283,
+    "f1_Poor": 0.9844479004665629,
+    "support_Poor": 27373,
+    "precision_Moderate": 0.7628239026969857,
+    "recall_Moderate": 0.4869198312236287,
+    "f1_Moderate": 0.5944164005356959,
+    "support_Moderate": 5925,
+    "precision_Good": 0.06876349059512797,
+    "recall_Good": 0.6092896174863388,
+    "f1_Good": 0.12357993904128567,
+    "support_Good": 366
+  },
+  "HGB point-wise (GR,AC,CBL,CCL + AC-missing)": {
+    "n": 33664,
+    "accuracy": 0.9188153517110266,
+    "macro_f1": 0.6696760114402801,
+    "kappa": 0.756820063641375,
+    "mcc": 0.7626879145481748,
+    "confusion": [
+      [
+        26360,
+        1013,
+        0
+      ],
+      [
+        41,
+        4258,
+        1626
+      ],
+      [
+        0,
+        53,
+        313
+      ]
+    ],
+    "precision_Poor": 0.9984470285216469,
+    "recall_Poor": 0.9629927300624703,
+    "f1_Poor": 0.9803994495481088,
+    "support_Poor": 27373,
+    "precision_Moderate": 0.7997746055597296,
+    "recall_Moderate": 0.7186497890295359,
+    "f1_Moderate": 0.7570450706729487,
+    "support_Moderate": 5925,
+    "precision_Good": 0.16142341413099537,
+    "recall_Good": 0.855191256830601,
+    "f1_Good": 0.2715835140997831,
+    "support_Good": 366
+  },
+  "HGB AC-missing indicator only": {
+    "n": 33664,
+    "accuracy": 0.75424786121673,
+    "macro_f1": 0.34383702557621904,
+    "kappa": 0.35088853742580317,
+    "mcc": 0.3970690605948207,
+    "confusion": [
+      [
+        25025,
+        0,
+        2348
+      ],
+      [
+        594,
+        0,
+        5331
+      ],
+      [
+        0,
+        0,
+        366
+      ]
+    ],
+    "precision_Poor": 0.9768140832975526,
+    "recall_Poor": 0.9142220436196252,
+    "f1_Poor": 0.9444821859903382,
+    "support_Poor": 27373,
+    "precision_Moderate": 0.0,
+    "recall_Moderate": 0.0,
+    "f1_Moderate": 0.0,
+    "support_Moderate": 5925,
+    "precision_Good": 0.04549409571162213,
+    "recall_Good": 1.0,
+    "f1_Good": 0.08702889073831886,
+    "support_Good": 366
+  },
+  "HGB point-wise (GR,CBL,CCL + VDL blocks)": {
+    "n": 33664,
+    "accuracy": 0.9519664923954373,
+    "macro_f1": 0.6893163258511715,
+    "kappa": 0.8494216392676426,
+    "mcc": 0.8505554959815153,
+    "confusion": [
+      [
+        26843,
+        521,
+        9
+      ],
+      [
+        81,
+        5064,
+        780
+      ],
+      [
+        0,
+        226,
+        140
+      ]
+    ],
+    "precision_Poor": 0.9969915317189125,
+    "recall_Poor": 0.9806378548204435,
+    "f1_Poor": 0.9887470762657237,
+    "support_Poor": 27373,
+    "precision_Moderate": 0.8714506969540526,
+    "recall_Moderate": 0.8546835443037974,
+    "f1_Moderate": 0.8629856850715747,
+    "support_Moderate": 5925,
+    "precision_Good": 0.15069967707212056,
+    "recall_Good": 0.3825136612021858,
+    "f1_Good": 0.21621621621621623,
+    "support_Good": 366
+  }
+}
