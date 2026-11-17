@@ -1,0 +1,78 @@
+{
+  "dataset_name": "BondFusion-TCN Six-Well Anonymised Cased-Hole Logging Dataset",
+  "total_samples": 55155,
+  "wells": {
+    "A": {
+      "rows": 6031,
+      "csv_file": "A.csv",
+      "csv_sha256": "8811972d5c6020683f2370faad2eb559408dde4e58d68a8be8dde2f707ddd660",
+      "vdl_file": "A_vdl.npy",
+      "vdl_shape": [
+        6031,
+        2000
+      ],
+      "vdl_dtype": "int16",
+      "vdl_sha256": "b29e0e8cfa3b64e60ce4f2157c96dfe1ac9896bb681cd88f0f297c93aac6193b"
+    },
+    "B": {
+      "rows": 4610,
+      "csv_file": "B.csv",
+      "csv_sha256": "a4832b5b5247fea6946765758630780d1d7e66ae4b89394fbb722ce7a482f1aa",
+      "vdl_file": "B_vdl.npy",
+      "vdl_shape": [
+        4610,
+        2000
+      ],
+      "vdl_dtype": "int16",
+      "vdl_sha256": "96233e2586235a8eb056bf11ff49bd70a94c5f3046aef2c364fb78c45b592d51"
+    },
+    "C": {
+      "rows": 3994,
+      "csv_file": "C.csv",
+      "csv_sha256": "21c676fc63021a5d00af859d03ac773efe8582f420d3904507282ab3a0fb119e",
+      "vdl_file": "C_vdl.npy",
+      "vdl_shape": [
+        3994,
+        2000
+      ],
+      "vdl_dtype": "int16",
+      "vdl_sha256": "3e558b43d9a025d0b4dc3b6081551b8703d043a66e775a52951c31522bb22735"
+    },
+    "D": {
+      "rows": 6856,
+      "csv_file": "D.csv",
+      "csv_sha256": "f28b649a59fc6c4b1f26f25a74ea619dc8ebe6fbd0a696a505bb22a18e14bb6c",
+      "vdl_file": "D_vdl.npy",
+      "vdl_shape": [
+        6856,
+        2000
+      ],
+      "vdl_dtype": "int16",
+      "vdl_sha256": "242e554b1c636890de3437d22313076fa0427d1c25ba3746037c33f242f4ea9b"
+    },
+    "E": {
+      "rows": 14573,
+      "csv_file": "E.csv",
+      "csv_sha256": "f8655dd0674924e23683798c2d800643cd6d8788558b078ba8c3a0f49332a3b5",
+      "vdl_file": "E_vdl.npy",
+      "vdl_shape": [
+        14573,
+        2000
+      ],
+      "vdl_dtype": "int16",
+      "vdl_sha256": "1b57281d1c8824d621b360b1dece76180ab7b95dbb18df1966fd8761e9b39308"
+    },
+    "F": {
+      "rows": 19091,
+      "csv_file": "F.csv",
+      "csv_sha256": "de46789c827d283bfb30ec7818d40ce576f3a79da4076e784f4ddec384f39c8d",
+      "vdl_file": "F_vdl.npy",
+      "vdl_shape": [
+        19091,
+        2000
+      ],
+      "vdl_dtype": "int16",
+      "vdl_sha256": "a4af894460670a248b6b6ab8ad1be89de71dc9de819064f5ce6b92d52e7fa9d6"
+    }
+  }
+}

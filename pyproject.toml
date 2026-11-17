@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bondfusion-tcn"
-version = "0.1.1"
-description = "VDL envelope and logging-curve fusion for cement-bond classification"
+version = "0.4.0"
+description = "Amplitude-gated Hilbert VDL envelope and logging-curve fusion for cement-bond classification"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT; third-party components retain their original licenses"}
 authors = [{name = "Yongan Zhang et al."}]
 dependencies = [
-  "torch>=2.1,<3", "numpy>=1.24,<3", "pandas>=2,<4", "scipy>=1.10,<2",
+  "torch>=2.1,<3", "lightning>=2.2,<3", "numpy>=1.24,<3", "pandas>=2,<4", "scipy>=1.10,<2",
   "scikit-learn>=1.3,<2", "PyYAML>=6,<7", "optuna>=3,<6",
   "einops>=0.6,<1", "reformer-pytorch==1.4.4"
 ]

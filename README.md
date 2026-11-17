@@ -1,32 +1,47 @@
 # BondFusion-TCN
 
-Research code for point-wise cement-bond quality classification into **Poor**,
-**Moderate**, and **Good** using logging curves and variable-density log (VDL)
-waveforms. BondFusion-TCN combines GR, transformed CBL, and transformed CCL with
-19 log-envelope VDL blocks, followed by a ModernTCN backbone and a point-wise
-classification head. It is a task-specific fusion design using an existing
-backbone; it does not introduce a new convolution operator.
+Open data and research code for point-wise cased-hole cement-bond quality
+classification into **Poor**, **Moderate**, and **Good** using conventional
+wireline logging curves (`GR`, `CBL`, `CCL`) and variable-density log (`VDL`)
+waveforms.
 
-## Model names and study scope
+In the **v04** study (`BondFusion-TCN` manuscript), the proposed architecture
+(`_code/da_reformer/models/bondfusion_tcn.py` inside a PyTorch Lightning
+container `_code/da_reformer/lightning_module.py`) bridges:
+1. Sub-period analytic **Hilbert log-envelopes** (`20 us` resolution, 95 channels)
+   and within-trace arrival contrast across the first 1,900 VDL time samples;
+2. A **decoupled curve prior** combined with a **training-anchored CBL rational
+   residual gate**; and
+3. **Zero-phase symmetric multi-scale depth filtering** inside a
+   non-normalizing multi-variable ModernTCN depth backbone.
 
-**BondFusion-TCN is registered as `ModernTCN +VDL` in the frozen v03 protocol.**
-The code package name `da_reformer` is retained for import compatibility.
-The protocol key `models.proposed` records the earlier training-well screen's
-selection, `VDL-ModernTCN (mean pool)`, a learned waveform encoder design. It is
-preserved as a design comparison and is not the manuscript's BondFusion-TCN.
-Use `--model "ModernTCN +VDL"` to reproduce the manuscript model.
+## Open six-well dataset (`v0.4.0`)
 
-The benchmark pairs eight sequence backbones (LSTM, GRU, Transformer, Reformer,
-Crossformer, TimesNet, TimeMixer, and ModernTCN) with curves-only and curves-plus-VDL
-inputs under equal hyperparameter-search budgets. Additional waveform encoder
-designs share the ModernTCN backbone. Preprocessing statistics are fitted only
-on the training wells of each split. The protocol specifies training-well
-leave-one-well-out cross-validation for selection and 10 final training seeds.
+**Both the complete anonymised six-well dataset and the full method codebase are
+publicly released here under `_data/raw/` (as well as in the `v0.4.0` GitHub
+Release archive).** Wells **A–F** provide `55,155` depth samples across `139`
+contiguous logging segments:
+- `_data/raw/{A..F}.csv`: UTF-8 curves (`DEPTH`, `GR`, `CBL`, `CCL`, optional
+  `AC`, and `label_raw`)
+- `_data/raw/{A..F}_vdl.npy`: aligned `int16` VDL waveforms `[N, 2000]`
+- `_data/raw/manifest.json`: SHA-256 checksums and per-well shapes/counts
 
-Wells A–D were used for training and selection; E/F were held out for the v03
-final evaluation. E/F had already been evaluated in previous benchmark versions,
-and the choice of ModernTCN was informed by those earlier results. They should
-not be described as a newly acquired or untouched external blind test.
+All six boreholes participate symmetrically under the unified **six-well nested
+leave-one-well-out (LOWO) cross-validation protocol** (`run_lightning_bondfusion_v04.py`).
+The earlier `v03` protocol (`protocol_v03.yaml`, `ModernTCN +VDL`) trained on A–D
+and evaluated E/F as held-out wells and is preserved for historical provenance.
+
+## Model identifiers
+
+- **BondFusion-TCN (`v04`, manuscript model):** `BondFusionTCN`
+  (`_code/da_reformer/models/bondfusion_tcn.py`), run under symmetric 6-well
+  nested LOWO CV (`_pipelines/01_run_cement_bond_benchmark/run_lightning_bondfusion_v04.py`).
+- **Paired backbones (`<Backbone>` / `<Backbone> +VDL`):** LSTM, GRU,
+  Transformer, Reformer, Crossformer, TimesNet, TimeMixer, and ModernTCN under
+  matched Optuna HPO budgets (30 trials per fold).
+- **`v03` historical reference (`ModernTCN +VDL` / `VDL-ModernTCN (mean pool)`):**
+  preserved in `protocol_v03.yaml`, `step_01`–`step_09`, and `results/` without
+  modification.
 
 ## Install and verify
 
@@ -51,22 +66,36 @@ checks and do not represent experimental evidence or reproduce paper numbers.
 
 ## Data availability and input contract
 
-**This release does not redistribute the underlying well logs or VDL waveforms.**
-No public data download or permission to redistribute the source dataset is
-provided here. Obtain data from its rights holder under appropriate permission,
-or prepare your own authorized data using the schema in `_data/raw/README.md`.
-The code license does not grant rights to any dataset. Released aggregate tables
-can be inspected without raw data; independent recomputation requires the data.
+The complete six-well anonymised dataset (Wells **A–F**, `55,155` samples) is
+directly included in `_data/raw/` (`{A..F}.csv`, `{A..F}_vdl.npy`, and
+`manifest.json`) as well as attached as a compressed archive to GitHub Release
+`v0.4.0`. Schema details and integrity hashes are documented in
+[`_data/raw/README.md`](_data/raw/README.md). To test another borehole dataset,
+place compatible CSV + VDL arrays following the same schema.
 
-For the original authorized archive, `step_01_load_raw_wells.py` extracts the
-curve CSVs and aligned waveform arrays. This extractor requires the external
-`unar` command and the original archive plus its intact well-A CSV. It performs
-an archive-specific size and prefix check; it is not a universal CSV converter.
-For other datasets, prepare the documented arrays directly and edit a copy of
-the protocol's well identifiers and paths. The fixed-count audit in step 02
-applies to the original six-well benchmark.
+## Reproduce the v04 BondFusion-TCN benchmark
 
-## Reproduce the v03 pipeline
+Run mathematical invariant and PyTorch Lightning unit tests (CPU, ~5 seconds):
+
+```bash
+PYTHONPATH=_code pytest _code/da_reformer/tests/test_invariants.py _code/da_reformer/tests/test_models.py -q
+```
+
+Run the symmetric six-well nested LOWO CV pipeline and rebuild the four-pillar
+summary tables (`01_comparison_experiments.csv`, `02_ablation_experiments.csv`,
+`03_sensitivity_experiments.csv`, `04_generalization_and_mechanism.csv`, and
+`05_statistical_significance.json`, archived under `results/v04/`):
+
+```bash
+PYTHONPATH=_code python _pipelines/01_run_cement_bond_benchmark/run_lightning_bondfusion_v04.py
+PYTHONPATH=_code python _pipelines/01_run_cement_bond_benchmark/build_four_pillar_tables_v04.py
+PYTHONPATH=_code python _pipelines/01_run_cement_bond_benchmark/build_v04_cag_figures.py
+```
+
+Publication-ready figure scripts and number checkers are in `_figures/`
+(`_figures/make_all.sh`).
+
+## Reproduce the v03 reference pipeline
 
 The executable steps live in `_pipelines/01_run_cement_bond_benchmark/`.
 All commands below run from the repository root; their default protocol is
@@ -162,21 +191,26 @@ introduced by the analysis supplement.
 
 ## Repository contents
 
-- `_code/da_reformer/`: preprocessing, current sequence models, training,
-  evaluation, and HPO. Abandoned dual-adversarial model implementations are
-  excluded; retained generic training hooks are inactive for released models.
-- `_pipelines/01_run_cement_bond_benchmark/`: protocol, executable steps, and
-  frozen hyperparameters. Runtime outputs remain local.
-- `results/`: aggregate tables from real v03 runs, without sample-level logs
-  or predictions. `results/README.md` describes the tables.
-- `_analysis/`: training-free statistical analysis, table builders and interval
-  selection, plus a separate optional HPO-noise CV training entry.
-- `scripts/`: synthetic CPU verification, publication-boundary audit and the
-  paper-analysis entry point.
-- `RELEASE_PROVENANCE.json`: source commit and file hashes for this distribution.
+- `_data/raw/`: complete anonymised six-well curve CSVs (`A.csv`–`F.csv`),
+  aligned VDL wavetrain arrays (`A_vdl.npy`–`F_vdl.npy`), and SHA-256
+  `manifest.json` (`55,155` depth samples across 139 contiguous logging segments).
+- `_code/da_reformer/`: preprocessing, sequence backbones, `BondFusionTCN`
+  (`models/bondfusion_tcn.py`), `BondFusionLightningModule`
+  (`lightning_module.py`), evaluation metrics, HPO, and CPU invariant tests
+  (`tests/`).
+- `_pipelines/01_run_cement_bond_benchmark/`: symmetric six-well nested LOWO CV
+  scripts (`run_lightning_bondfusion_v04.py`, `build_four_pillar_tables_v04.py`,
+  `build_v04_cag_figures.py`, `cache_missing_d_baselines_v04.py`) alongside the
+  historical `v03` protocol and frozen HPO selections.
+- `_figures/`: publication figure scripts (`fig_02`–`fig_07`, `fig_S1`–`fig_S2`),
+  number builders, and plot styling (`_reproduction/`).
+- `results/v04/` & `results/`: `v04` four-pillar summary tables, 139-segment
+  block-bootstrap significance records, and `v03` reference tables.
+- `_analysis/`: training-free statistical analysis and table formatters.
+- `scripts/`: synthetic CPU verification and publication-boundary audit.
 
-Raw logs, model weights, sample-level predictions, unpublished manuscripts,
-consultation histories, and personal or platform configuration are excluded.
+Model weights, sample-level checkpoints, unpublished manuscripts, consultation
+histories, and personal or platform configuration are excluded.
 Changes and release versions are tracked by Git.
 
 ## License

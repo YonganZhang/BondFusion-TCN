@@ -1,0 +1,29 @@
+Analysis_Type,Subject,Samples,MacroF1,Balanced_Accuracy,Kappa,F1_Poor,F1_Moderate,F1_Good,ROC_AUC_Good_vs_Mod,Boundary_Errors,Boundary_Total,Interior_Errors,Interior_Total,Notes
+Per-Well LOWO Generalization,BondFusion-TCN (Ours) - Held-out Well A,6031,0.9634,0.9450,0.9749,0.9985,0.9789,0.9129,0.9968,9,30,65,6001,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,BondFusion-TCN (Ours) - Held-out Well B,4610,0.9976,0.9972,0.9931,0.9958,0.9970,1.0000,1.0000,7,15,9,4595,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,BondFusion-TCN (Ours) - Held-out Well C,3994,0.6848,0.8702,0.5823,0.9813,0.7795,0.2936,0.9599,8,15,1002,3979,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,BondFusion-TCN (Ours) - Held-out Well D,6856,0.9266,0.9397,0.9060,0.9877,0.9340,0.8582,0.9684,8,20,396,6836,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,BondFusion-TCN (Ours) - Held-out Well E,14573,0.7957,0.8714,0.9466,0.9949,0.9543,0.4378,0.9329,13,35,222,14538,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,BondFusion-TCN (Ours) - Held-out Well F,19091,0.7975,0.7698,0.8761,0.9807,0.8946,0.5172,0.9979,20,40,762,19051,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,2D-CNN +VDL - Held-out Well A,6031,0.8088,0.7758,0.8970,0.9927,0.9221,0.5115,0.9302,14,30,286,6001,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,2D-CNN +VDL - Held-out Well B,4610,0.9786,0.9699,0.9646,0.9796,0.9844,0.9718,1.0000,5,15,77,4595,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,2D-CNN +VDL - Held-out Well C,3994,0.6574,0.8493,0.5348,0.9624,0.7394,0.2704,0.9101,8,15,1155,3979,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,2D-CNN +VDL - Held-out Well D,6856,0.9215,0.9195,0.9008,0.9824,0.9320,0.8502,0.9754,9,20,412,6836,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,2D-CNN +VDL - Held-out Well E,14573,0.6484,0.6541,0.9431,0.9922,0.9529,0.0000,0.8733,14,35,236,14538,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,2D-CNN +VDL - Held-out Well F,19091,0.8461,0.8245,0.8938,0.9829,0.9113,0.6442,0.9653,19,40,648,19051,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,ModernTCN +VDL - Held-out Well A,6031,0.8896,0.8516,0.9346,0.9969,0.9468,0.7249,0.9998,12,30,179,6001,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,ModernTCN +VDL - Held-out Well B,4610,0.9971,0.9975,0.9918,0.9950,0.9964,1.0000,1.0000,6,15,13,4595,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,ModernTCN +VDL - Held-out Well C,3994,0.6448,0.8444,0.5117,1.0000,0.6955,0.2389,0.9541,8,15,1279,3979,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,ModernTCN +VDL - Held-out Well D,6856,0.8708,0.8399,0.8393,0.9570,0.9041,0.7513,0.9924,9,20,651,6836,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,ModernTCN +VDL - Held-out Well E,14573,0.6163,0.6010,0.8485,0.9772,0.8716,0.0000,0.8641,14,35,605,14538,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,ModernTCN +VDL - Held-out Well F,19091,0.7408,0.7204,0.9167,0.9915,0.9293,0.3017,0.9991,20,40,488,19051,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,CBL Two-Threshold Rule - Held-out Well A,6031,0.6276,0.6606,0.8495,0.9926,0.8900,0.0000,0.5000,15,30,418,6001,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,CBL Two-Threshold Rule - Held-out Well B,4610,0.6473,0.6517,0.9245,0.9741,0.9677,0.0000,0.5000,5,15,167,4595,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,CBL Two-Threshold Rule - Held-out Well C,3994,0.6353,0.6423,0.8223,0.9576,0.9483,0.0000,0.4984,7,15,290,3979,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,CBL Two-Threshold Rule - Held-out Well D,6856,0.6273,0.6415,0.6169,0.9676,0.7641,0.1502,0.4906,12,20,1556,6836,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,CBL Two-Threshold Rule - Held-out Well E,14573,0.6203,0.7820,0.7755,0.9918,0.7715,0.0977,0.6903,11,35,1014,14538,Nested LOWO blind well evaluation
+Per-Well LOWO Generalization,CBL Two-Threshold Rule - Held-out Well F,19091,0.5312,0.5699,0.6025,0.9808,0.5317,0.0812,0.3746,20,40,2601,19051,Nested LOWO blind well evaluation
+Mechanism Check,CBL-Gated Bridge Gain (Full vs w/o CBL-gated bridge on High-CBL Well E),55155,0.8629,0.9081,0.9038,0.9885,0.9213,0.6788,0.9402,65,155,2456,55000,Zero-false-Good leakage gating
+Mechanism Check,Early-Window Reference Drift (early-window-reference),55155,0.6874,0.6790,0.7487,0.9554,0.7946,0.3122,0.8695,77,155,6179,55000,Tests casing-head subtraction fragility across boreholes
+Mechanism Check,Target-Domain Leakage Diagnostic (auxiliary-test-centering),55155,0.5669,0.5254,0.4564,0.8581,0.5900,0.2524,0.8576,88,155,11978,55000,Excluded auxiliary mode proving naive median shift fails
+Mechanism Check,Boundary vs Interior Error Profile (w/o Zero-phase filter),55155,0.8608,0.9049,0.9032,0.9887,0.9209,0.6728,0.9406,68,155,2467,55000,Boundary error check under causal group-delay filter
